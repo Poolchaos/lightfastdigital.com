@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lightfast Digital (Pty) Ltd</title>
+<meta name="description" content="Lightfast Digital (Pty) Ltd is a South African software company that builds and operates its own products: POPIAdesk, TallyGuard, and Wildmuster.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230E1116'/%3E%3Cpath%20d='M22%2014h8v28h14v8H22z'%20fill='%23D4A03A'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0E1116;
+    --bg-raise: #131720;
+    --text: #E8EAED;
+    --muted: #9AA0A6;
+    --line: rgba(232, 234, 237, 0.10);
+    --gold: #D4A03A;
+    --gold-soft: rgba(212, 160, 58, 0.14);
+    --gold-line: rgba(212, 160, 58, 0.45);
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #FFFFFF;
+      --bg-raise: #F7F7F5;
+      --text: #1A1D21;
+      --muted: #5F6368;
+      --line: rgba(26, 29, 33, 0.12);
+      --gold: #B0821F;
+      --gold-soft: rgba(176, 130, 31, 0.10);
+      --gold-line: rgba(176, 130, 31, 0.45);
+      color-scheme: light;
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* One quiet light source, top of page - the "lightfast" idea without theatrics. */
+  .glow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(60rem 30rem at 78% -10%, var(--gold-soft), transparent 60%);
+  }
+
+  .page {
+    position: relative;
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 48px);
+  }
+
+  /* ── Header ─────────────────────────────────────────────── */
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: clamp(20px, 4vw, 36px) 0;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .brand__mark { display: block; width: 34px; height: 34px; }
+  .brand__word {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .brand__word small {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+  }
+  .top__contact {
+    font-size: 13.5px;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 160ms ease, border-color 160ms ease;
+    white-space: nowrap;
+  }
+  .top__contact:hover { color: var(--gold); border-color: var(--gold-line); }
+
+  /* ── Hero ───────────────────────────────────────────────── */
+  .hero { padding: clamp(48px, 12vh, 130px) 0 clamp(44px, 9vh, 96px); }
+  .hero__kicker {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero__kicker::before {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 2px;
+    background: var(--gold);
+  }
+  .hero h1 {
+    font-size: clamp(30px, 5.4vw, 58px);
+    line-height: 1.12;
+    font-weight: 650;
+    letter-spacing: -0.015em;
+    max-width: 19ch;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  /* ── Section scaffolding ────────────────────────────────── */
+  section { padding: clamp(34px, 6vh, 64px) 0; border-top: 1px solid var(--line); }
+  .label {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: clamp(22px, 4vh, 36px);
+  }
+
+  /* ── Products ───────────────────────────────────────────── */
+  .products__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 26px 26px 24px;
+    background: var(--bg-raise);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    transition: transform 180ms ease, border-color 180ms ease;
+  }
+  .card:hover { transform: translateY(-3px); border-color: var(--gold-line); }
+  .card__index {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    font-variant-numeric: tabular-nums;
+  }
+  .card h3 { font-size: 19px; font-weight: 650; letter-spacing: -0.01em; }
+  .card p { font-size: 14.5px; color: var(--muted); flex: 1; }
+  .card__link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+    border-bottom: 1px solid transparent;
+    transition: border-color 160ms ease;
+  }
+  .card__link:hover { border-color: var(--gold-line); }
+  .card__link svg { width: 13px; height: 13px; transition: transform 180ms ease; }
+  .card:hover .card__link svg { transform: translateX(3px); }
+  .card__tag {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    background: var(--gold-soft);
+    border-radius: 999px;
+    padding: 3px 12px;
+    width: fit-content;
+  }
+
+  /* ── Company details ────────────────────────────────────── */
+  .details__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 40px;
+    max-width: 760px;
+  }
+  .details__grid dt {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .details__grid dd { font-size: 16.5px; font-weight: 500; }
+  .details__grid dd a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--gold-line); transition: color 160ms ease; }
+  .details__grid dd a:hover { color: var(--gold); }
+  .tnum-reg { font-variant-numeric: tabular-nums; }
+  .reg-pending {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+    padding: 2px 10px;
+    border: 1px dashed var(--gold-line);
+    border-radius: 8px;
+    color: var(--gold);
+    font-size: 15px;
+  }
+
+  /* ── Footer ─────────────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0 44px;
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* ── Motion (respectfully) ──────────────────────────────── */
+  @media (prefers-reduced-motion: no-preference) {
+    .rise { opacity: 0; transform: translateY(14px); animation: rise 640ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+    .rise-2 { animation-delay: 90ms; }
+    .rise-3 { animation-delay: 180ms; }
+    .rise-4 { animation-delay: 270ms; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+  }
+
+  /* ── Small screens ──────────────────────────────────────── */
+  @media (max-width: 860px) {
+    .products__grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .top__contact { display: none; }
+    .details__grid { grid-template-columns: 1fr; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="page">
+
+  <header class="top rise">
+    <span class="brand">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0E1116"/>
+        <rect width="63" height="63" x="0.5" y="0.5" rx="13.5" fill="none" stroke="rgba(212,160,58,0.35)"/>
+        <path d="M22 14h8v28h14v8H22z" fill="#D4A03A"/>
+      </svg>
+      <span class="brand__word">LIGHTFAST <small>DIGITAL</small></span>
+    </span>
+    <a class="top__contact" href="mailto:admin@lightfastdigital.com">admin@lightfastdigital.com</a>
+  </header>
+
+  <main>
+    <section class="hero rise rise-2" style="border-top: none;">
+      <p class="hero__kicker">Lightfast Digital (Pty) Ltd</p>
+      <h1>A South African software company that builds and operates <em>its own products</em>.</h1>
+    </section>
+
+    <section class="rise rise-3" aria-labelledby="products-label">
+      <h2 class="label" id="products-label">Products</h2>
+      <div class="products__grid">
+        <article class="card">
+          <span class="card__index">01</span>
+          <h3>POPIAdesk</h3>
+          <p>POPIA compliance software for South African small businesses: readiness assessments, the required documents, breach procedures, and ongoing compliance tracking.</p>
+          <a class="card__link" href="https://popiadesk.co.za">popiadesk.co.za
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9m0 0L8.5 4.5M12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+        <article class="card">
+          <span class="card__index">02</span>
+          <h3>TallyGuard</h3>
+          <p>A free, deterministic code scanner that catches the security mistakes AI coding tools leave behind.</p>
+          <a class="card__link" href="https://github.com/tallyguard/tallyguard">github.com/tallyguard
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9m0 0L8.5 4.5M12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+        <article class="card">
+          <span class="card__index">03</span>
+          <h3>Wildmuster</h3>
+          <p>A warband survivors-like PC game.</p>
+          <span class="card__tag">In development</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="rise rise-4" aria-labelledby="company-label">
+      <h2 class="label" id="company-label">Company</h2>
+      <dl class="details__grid">
+        <div>
+          <dt>Legal name</dt>
+          <dd>Lightfast Digital (Pty) Ltd</dd>
+        </div>
+        <div>
+          <dt>Registration number</dt>
+          <dd class="tnum-reg">2026/652553/07</dd>
+        </div>
+        <div>
+          <dt>Based in</dt>
+          <dd>Cape Town, South Africa</dd>
+        </div>
+        <div>
+          <dt>Contact</dt>
+          <dd><a href="mailto:admin@lightfastdigital.com">admin@lightfastdigital.com</a></dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <span>&copy; 2026 Lightfast Digital (Pty) Ltd</span>
+    <span>This site sets no cookies and collects no personal information.</span>
+  </footer>
+
+</div>
+</body>
+</html>
