@@ -1,0 +1,20 @@
+# Lightfast Digital (Pty) Ltd
+
+> Lightfast Digital (Pty) Ltd is a South African software company that builds and
+> operates its own products. Registration number 2026/652553/07, registered 2026-08-17,
+> based in Cape Town, South Africa.
+
+## Products
+
+- POPIAdesk: POPIA compliance software for South African small businesses - readiness
+  assessments, required documents, breach procedures, and ongoing compliance tracking.
+  https://popiadesk.co.za
+- VetGuard: a free, open-source, local-first scanner for npm supply-chain threats
+  created by AI-assisted development - hallucinated (slopsquatted) dependencies,
+  typosquats, and freshly registered malicious packages.
+  https://www.npmjs.com/package/vetguard
+
+## Contact
+
+- Email: admin@lightfastdigital.com
+- This site sets no cookies and collects no personal information.
