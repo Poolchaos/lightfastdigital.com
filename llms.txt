@@ -1,20 +1,36 @@
 # Lightfast Digital (Pty) Ltd
 
-> Lightfast Digital (Pty) Ltd is a South African software company that builds and
-> operates its own products. Registration number 2026/652553/07, registered 2026-08-17,
-> based in Cape Town, South Africa.
+A registered South African software company. It builds POPIAdesk and VetGuard.
+Every company fact below is a public record.
 
-## Products
+## Company record
 
-- POPIAdesk: POPIA compliance software for South African small businesses - readiness
-  assessments, required documents, breach procedures, and ongoing compliance tracking.
-  https://popiadesk.co.za
-- VetGuard: a free, open-source, local-first scanner for npm supply-chain threats
-  created by AI-assisted development - hallucinated (slopsquatted) dependencies,
-  typosquats, and freshly registered malicious packages.
+- Enterprise number: 2026/652553/07, issued by the CIPC (South Africa's companies
+  registrar). Searchable on the CIPC company register at cipc.co.za.
+- Legal name: Lightfast Digital (Pty) Ltd. A private company.
+- Registered: 17 August 2026 (the effective date on the registration certificate).
+- Based in: Cape Town, South Africa. The registered address is on the CIPC record.
+- Company page: https://www.linkedin.com/company/lightfastdigital/
+- Contact: admin@lightfastdigital.com
+- Founded by: Phillip-Juan van der Berg. Directors are listed on the CIPC record.
+
+## What we build
+
+- POPIAdesk. Status: built, opening soon. POPIA compliance software for South African
+  small and medium businesses. In its own words, from popiadesk.co.za on 31 August 2026:
+  "POPIAdesk generates your core POPIA documents, tracks a live compliance score, and
+  manages data subject requests against their deadlines." The free readiness check is
+  live at https://popiadesk.co.za/assess
+- VetGuard. Status: free and open source, available now. A tool for developers that
+  checks the code libraries a project installs for fakes and tampering. In its own words,
+  from its published description, version 0.3.0: "No account, no server, no telemetry."
   https://www.npmjs.com/package/vetguard
 
-## Contact
+## This page and your data
 
-- Email: admin@lightfastdigital.com
-- This site sets no cookies and collects no personal information.
+Cookies: none. Trackers: none. Requests to other servers: none. Files: 1. Size: 122 KB, uncompressed.
+These are measured on every build and the page states only what was measured.
+
+<!-- Maintenance: the POPIAdesk screenshot on the page is a dated capture of the public
+     site. Re-capture and re-date it whenever popiadesk.co.za changes materially, and at
+     the latest when the product opens. -->
